@@ -70,3 +70,11 @@ if __name__ == '__main__':
     reverse_string_4(s)
     reverse_string_5(s)
     ExecutionTime.report()
+    #output
+    """Group name 1
+No.	Function Name		Execution Time
+1	reverse_string_1		0.000001
+2	reverse_string_5		0.000001
+3	reverse_string_3		0.000002
+4	reverse_string_4		0.000002
+5	reverse_string_2		0.000002"""
