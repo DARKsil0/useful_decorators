@@ -15,9 +15,9 @@ class ExecutionTime:
     def __call__(self, func):
         def wrapped_func(*args, **kwargs):
             self.func_name = func.__name__
-            self.start_time = time.time()
+            self.start_time = time.monotonic()
             result = func(*args, **kwargs)
-            self.end_time = time.time()
+            self.end_time = time.monotonic()
             self.execution_time = self.end_time - self.start_time
             if self.group_name not in ExecutionTime.results:
                 ExecutionTime.results[self.group_name] = []
@@ -59,6 +59,7 @@ def reverse_string_4(s):
 
 @ExecutionTime(group_name=1)
 def reverse_string_5(s):
+    time.sleep(5)
     return "".join(s[i] for i in range(len(s) - 1, -1, -1))
 
 
